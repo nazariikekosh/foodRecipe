@@ -12,7 +12,7 @@ const CustomButton = ({buttonText, buttonContainerStyle, colors, onPress}) => {
                 <Text 
                     style={{
                         textAlign: "center",
-                        colors: COLORS.white,
+                        color: COLORS.white,
                         ...FONTS.h2
                     }}
                 >
@@ -28,7 +28,7 @@ const CustomButton = ({buttonText, buttonContainerStyle, colors, onPress}) => {
                 <Text 
                     style={{
                         textAlign: "center",
-                        colors: COLORS.lightGreen,
+                        color: COLORS.lightGreen,
                         ...FONTS.h2
                     }}
                 >

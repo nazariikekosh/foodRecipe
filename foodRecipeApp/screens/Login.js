@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, ImageBackground, StatusBar } from 'react-
 import React from 'react'
 import { images, COLORS, SIZES, FONTS } from '../constants'
 import LinearGradient from 'react-native-linear-gradient'
+import { CustomButton } from '../components'
 
 const Login = ({ navigation }) => {
 
@@ -66,6 +67,25 @@ const Login = ({ navigation }) => {
         </Text>
 
         {/* Buttons */}
+        <View style={{
+          flex: 1,
+          justifyContent: 'center',
+        }}>
+          {/* Login */}
+          <CustomButton 
+            buttonText="Login"
+            colors={[COLORS.darkGreen, COLORS.lime]}
+            onPress={() => navigation.replace("Home")}
+          />
+
+          {/* Sign Up */}
+
+          <CustomButton 
+            buttonText="Sign Up"
+            colors={[]}
+            onPress={() => navigation.replace("Home")}
+          />
+        </View>
 
       </View>
     )
