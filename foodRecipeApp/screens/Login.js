@@ -32,13 +32,44 @@ const Login = ({ navigation }) => {
               paddingHorizontal: SIZES.padding
             }}
           >
-
+            <Text style={{  
+              width: '80%',
+              color: COLORS.white,
+              ...FONTS.largeTitle,
+              lineHeight: 45
+            }}>
+              Cooking a Delicious Food Easily
+            </Text>
           </LinearGradient>
         </ImageBackground>
       </View>
     )
   }
 
+  function renderDetail() {
+    return (
+      <View style={{
+        flex: 1,
+        paddingHorizontal: SIZES.padding
+      }}>
+        {/* Description */}
+
+        <Text 
+        style={{
+          marginTop: SIZES.radius,
+          width: '70%',
+          color: COLORS.gray,
+          ...FONTS.body3
+        }}>
+          Discover more than 1200 food recipes in your
+          hands and cooking it easily!
+        </Text>
+
+        {/* Buttons */}
+
+      </View>
+    )
+  }
 
   return (
     <View style={{
@@ -49,6 +80,7 @@ const Login = ({ navigation }) => {
       {/* Header */}
       {renderHeader()}
       {/* Detail */}
+      {renderDetail()}
     </View>
   )
 }
