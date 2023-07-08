@@ -74,6 +74,10 @@ const Login = ({ navigation }) => {
           {/* Login */}
           <CustomButton 
             buttonText="Login"
+            buttonContainerStyle={{
+              paddingVertical: 18,
+              borderRadius: 20
+            }}
             colors={[COLORS.darkGreen, COLORS.lime]}
             onPress={() => navigation.replace("Home")}
           />
@@ -82,6 +86,13 @@ const Login = ({ navigation }) => {
 
           <CustomButton 
             buttonText="Sign Up"
+            buttonContainerStyle={{
+              marginTop: SIZES.radius,
+              paddingVertical: 18,
+              borderRadius: 20,
+              borderColor: COLORS.darkLime,
+              borderWidth: 1
+            }}
             colors={[]}
             onPress={() => navigation.replace("Home")}
           />

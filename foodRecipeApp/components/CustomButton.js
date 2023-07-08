@@ -9,27 +9,39 @@ const CustomButton = ({buttonText, buttonContainerStyle, colors, onPress}) => {
             <TouchableOpacity 
                 onPress={onPress}
             >
-                <Text 
+                <LinearGradient
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    colors={colors}
                     style={{
-                        textAlign: "center",
-                        color: COLORS.white,
-                        ...FONTS.h2
+                        ...buttonContainerStyle
                     }}
                 >
-                    {buttonText}
-                </Text>
+                    <Text 
+                        style={{
+                            textAlign: "center",
+                            color: COLORS.white,
+                            ...FONTS.h3
+                        }}
+                    >
+                        {buttonText}
+                    </Text>
+                </LinearGradient>
             </TouchableOpacity>
         )
     }  else {
         return(
             <TouchableOpacity 
+            style={{
+                ...buttonContainerStyle
+            }}
                 onPress={onPress}
             >
                 <Text 
                     style={{
                         textAlign: "center",
-                        color: COLORS.lightGreen,
-                        ...FONTS.h2
+                        color:COLORS.white,
+                        ...FONTS.h3
                     }}
                 >
                     {buttonText}
