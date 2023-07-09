@@ -42,6 +42,15 @@ const CategoryCard = ({containerStyle, categoryItem, onPress}) => {
                     {categoryItem.name}
                 </Text>
             {/* Srvings */}
+
+            <Text 
+                style={{
+                    color: COLORS.gray,
+                    ...FONTS.body4
+                }}
+            >
+                {categoryItem.duration} | {categoryItem.serving} Serving
+            </Text>
         </View>
 
     </TouchableOpacity>

@@ -19,12 +19,22 @@ const Home = ({ navigation }) => {
         keyboardDismissMode='on-drag'
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
-          <View></View>
+          <View>
+            {/* Header */}
+            {/* Search Bar */}
+            {/* See Recipe Card */}
+            {/* Trending Section */}
+            {/* Category Header */}
+          </View>
         }
         renderItem={({ item }) => {
           return(
             <CategoryCard 
+            containerStyle={{
+              marginHorizontal: SIZES.padding
+            }}
               categoryItem={item}
+              onPress={() => navigation.navigate('Recipe', {recipe: item})}
             />
           )
         }}
