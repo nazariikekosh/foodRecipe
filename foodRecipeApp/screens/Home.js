@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, FONTS, SIZES, icons, images, dummyData} from '../constants';
-import {CategoryCard} from '../components';
+import {CategoryCard, TrendingCard} from '../components';
 
 const Home = ({navigation}) => {
   function renderHeader() {
@@ -133,22 +133,47 @@ const Home = ({navigation}) => {
             You have 12 recipes that you haven't tried yet
           </Text>
           <TouchableOpacity
-          style={{
-            marginTop: 10
-          }}
-          omPress={() => comsole.log("See Recipe")}
-        >
-          <Text
-          style={{
-            color: COLORS.darkGreen,
-            textDecorationLine: 'underline',
-            ...FONTS.h4
-          }}
-          >
-            See Recipes
-          </Text>
-        </TouchableOpacity>
+            style={{
+              marginTop: 10,
+            }}
+            omPress={() => comsole.log('See Recipe')}>
+            <Text
+              style={{
+                color: COLORS.darkGreen,
+                textDecorationLine: 'underline',
+                ...FONTS.h4,
+              }}>
+              See Recipes
+            </Text>
+          </TouchableOpacity>
         </View>
+      </View>
+    );
+  }
+
+  function renderTrendingSection() {
+    return (
+      <View
+        style={{
+          marginTop: SIZES.padding,
+        }}>
+        <Text
+          style={{
+            marginHorizontal: SIZES.padding,
+            ...FONTS.h2,
+          }}>
+          Trending recipe
+        </Text>
+
+        <FlatList
+          data={dummyData.trendingRecipes}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => `${item.id}`}
+          renderItem={({item, index}) => {
+            return <TrendingCard recipeItem={item} />;
+          }}
+        />
       </View>
     );
   }
@@ -174,6 +199,7 @@ const Home = ({navigation}) => {
             {/* See Recipe Card */}
             {renderSeeRecipeCard()}
             {/* Trending Section */}
+            {renderTrendingSection()}
             {/* Category Header */}
           </View>
         }
