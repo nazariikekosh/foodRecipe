@@ -10,8 +10,10 @@ const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: { bottom: 0,
+        tabBarStyle: { 
+          bottom: 0,
           left: 0,
           right: 0,
           elevation: 0,
