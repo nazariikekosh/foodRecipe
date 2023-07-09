@@ -186,6 +186,40 @@ const Home = ({navigation}) => {
     );
   }
 
+function renderCategoryHeader() {
+    return(
+      <View style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 20,
+        marginHorizontal: SIZES.padding
+      }}>
+        {/* Section title */}
+        <Text
+          style={{
+            flex: 1,
+            ...FONTS.h2
+          }}
+        >
+          Categories
+        </Text>
+
+        {/* View all */}
+          <TouchableOpacity>
+            <Text
+              style={{
+                color: COLORS.gray,
+                ...FONTS.body4
+              }}
+            >
+              View All
+            </Text>
+          </TouchableOpacity>
+
+      </View>
+    )
+  }
+
   return (
     <SafeAreaView
       style={{
@@ -209,6 +243,7 @@ const Home = ({navigation}) => {
             {/* Trending Section */}
             {renderTrendingSection()}
             {/* Category Header */}
+            {renderCategoryHeader()}
           </View>
         }
         renderItem={({item}) => {
