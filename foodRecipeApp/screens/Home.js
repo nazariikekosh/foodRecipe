@@ -39,16 +39,14 @@ const Home = ({navigation}) => {
             style={{
               marginTop: 3,
               color: COLORS.gray,
-              ...FONTS.body3
-            }}
-          >
-            What you want to cook today?</Text>
+              ...FONTS.body3,
+            }}>
+            What you want to cook today?
+          </Text>
         </View>
         {/* Image */}
-        <TouchableOpacity
-          onPress={()=> console.log('profile')}
-        >
-          <Image 
+        <TouchableOpacity onPress={() => console.log('profile')}>
+          <Image
             source={images.profile}
             style={{
               width: 55,
@@ -57,40 +55,102 @@ const Home = ({navigation}) => {
             }}
           />
         </TouchableOpacity>
-
       </View>
     );
   }
 
   function renderSearchBar() {
-    return(
-      <View style={{
-        flexDirection: 'row',
-        height: 50,
-        alignItems: 'center',
-        marginHorizontal: SIZES.padding,
-        paddingHorizontal: SIZES.padding,
-        borderRadius: 10,
-        backgroundColor: COLORS.lightGray
-      }}> 
-        <Image 
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          height: 50,
+          alignItems: 'center',
+          marginHorizontal: SIZES.padding,
+          paddingHorizontal: SIZES.padding,
+          borderRadius: 10,
+          backgroundColor: COLORS.lightGray,
+        }}>
+        <Image
           source={icons.search}
           style={{
             width: 20,
             height: 20,
-            tintColor: COLORS.gray
+            tintColor: COLORS.gray,
           }}
         />
-        <TextInput 
+        <TextInput
           style={{
             marginLeft: SIZES.radius,
-            ...FONTS.body3
+            ...FONTS.body3,
           }}
           placeholderTextColor={COLORS.gray}
-          placeholder='Search Recipes'
+          placeholder="Search recipes"
         />
       </View>
-    )
+    );
+  }
+
+  function renderSeeRecipeCard() {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          marginTop: SIZES.padding,
+          marginHorizontal: SIZES.padding,
+          borderRadius: 10,
+          backgroundColor: COLORS.lightGreen,
+        }}>
+        {/* Image */}
+        <View
+          style={{
+            width: 100,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Image
+            source={images.recipe}
+            style={{
+              width: 80,
+              height: 80,
+            }}
+          />
+        </View>
+
+        {/* Text */}
+
+        <View
+          style={{
+            flex: 1,
+            paddingVertical: SIZES.radius,
+          }}>
+          <Text
+            style={{
+              width: '70%',
+              ...FONTS.body4,
+            }}>
+            {' '}
+            You have 12 recipes that you haven't tried yet
+          </Text>
+          <TouchableOpacity
+          style={{
+            marginTop: 10
+          }}
+          omPress={() => comsole.log("See Recipe")}
+        >
+          <Text
+          style={{
+            color: COLORS.darkGreen,
+            textDecorationLine: 'underline',
+            ...FONTS.h4
+          }}
+          >
+            See Recipes
+          </Text>
+        </TouchableOpacity>
+        </View>
+      </View>
+    );
   }
 
   return (
@@ -112,6 +172,7 @@ const Home = ({navigation}) => {
             {/* Search Bar */}
             {renderSearchBar()}
             {/* See Recipe Card */}
+            {renderSeeRecipeCard()}
             {/* Trending Section */}
             {/* Category Header */}
           </View>
@@ -128,9 +189,7 @@ const Home = ({navigation}) => {
           );
         }}
         ListFooterComponent={<View />}
-        style={{
-          marginBottom: 100,
-        }}
+        style={{}}
       />
     </SafeAreaView>
   );
