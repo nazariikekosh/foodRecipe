@@ -7,7 +7,6 @@ const laksa = require("../assets/images/recipes/laksa.png")
 const nasiLemak = require("../assets/images/recipes/nasi-lemak.webp")
 
 const profile = require("../assets/images/dummy_profiles/profile.jpg")
-const UserProfile1 = require("../assets/images/dummy_profiles/lialiuk.jpg")
 const UserProfile2 = require("../assets/images/dummy_profiles/marijaPinchak.jpg")
 const UserProfile3 = require("../assets/images/dummy_profiles/milena.jpg")
 const UserProfile4 = require("../assets/images/dummy_profiles/sonya.jpg")
@@ -27,7 +26,6 @@ export default {
     laksa,
     nasiLemak,
 
-    UserProfile1,
     UserProfile2,
     UserProfile3,
     UserProfile4,
