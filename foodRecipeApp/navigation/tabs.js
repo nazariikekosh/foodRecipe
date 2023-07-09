@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {Home} from '../screens';
+import {Home, Search, Bookmark, Settings} from '../screens';
 import {COLORS, icons} from '../constants';
 import {TabIcon} from '../components';
 
@@ -26,13 +26,13 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} options={{
         tabBarIcon: ({focused}) => <TabIcon focused={focused} icon={icons.home} />
       }}/>
-      <Tab.Screen name="Search" component={Home} options={{
+      <Tab.Screen name="Search" component={Search} options={{
         tabBarIcon: ({focused}) => <TabIcon focused={focused} icon={icons.search} />
       }} />
-      <Tab.Screen name="Bookmark" component={Home} options={{
+      <Tab.Screen name="Bookmark" component={Bookmark} options={{
         tabBarIcon: ({focused}) => <TabIcon focused={focused} icon={icons.bookmark} />
       }} />
-      <Tab.Screen name="Settings" component={Home} options={{
+      <Tab.Screen name="Settings" component={Settings} options={{
         tabBarIcon: ({focused}) => <TabIcon focused={focused} icon={icons.settings} />
       }} />
     </Tab.Navigator>

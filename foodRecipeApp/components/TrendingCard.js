@@ -11,14 +11,25 @@ import {SIZES, COLORS, FONTS, icons} from '../constants';
 import { BlurView } from '@react-native-community/blur';
 
 const RecipeCardInfo = ({recipeItem}) => {
-    return (
-        <BlurView
-            blurType='dark'
-            style={styles.recipeCardContainer}
-        >
+    if(Platform.OS === 'ios') {
+        return (
+          <BlurView
+              blurType='dark'
+              style={styles.recipeCardContainer}
+          >
 
-        </BlurView>
-    )
+          </BlurView>
+      )
+    } else {
+      return(
+        <View style={{
+          ...styles.recipeCardContainer,
+          backgroundColor: COLORS.transparentGray
+        }}>
+
+        </View>
+      )
+    }
 }
 const TrendingCard = ({containerStyle, recipeItem, onPress}) => {
   return (
