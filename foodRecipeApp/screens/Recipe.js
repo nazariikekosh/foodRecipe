@@ -1,5 +1,6 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Image, TouchableOpacity, Amimated, Platform } from 'react-native'
+import React, {useRef} from 'react'
+import { COLORS, FONTS, SIZES, icons } from '../constants'
 
 const Recipe = () => {
   return (
