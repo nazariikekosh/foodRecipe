@@ -28,6 +28,22 @@ const CategoryCard = ({containerStyle, categoryItem, onPress}) => {
         />
 
         {/* Detalis */}
+        <View style={{
+            width: '65%',
+            paddingHorizontal: 20
+        }}>
+            {/* Name */}
+                <Text
+                style={{
+                    flex: 1,
+                    ...FONTS.h2
+                }}
+                >
+                    {categoryItem.name}
+                </Text>
+            {/* Srvings */}
+        </View>
+
     </TouchableOpacity>
   );
 };
