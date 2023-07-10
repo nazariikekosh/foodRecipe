@@ -132,6 +132,22 @@ const Recipe = ({ navigation, route }) => {
         </TouchableOpacity>
 
         {/* Bockmark */}
+
+        <TouchableOpacity style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: 35,
+          width: 35,
+        }}>
+          <Image
+            source={selectedRecipe?.isBookmarked ? icons.bookmarkFilled : icons.bookmark}
+            style={{
+                width: 30,
+                height: 30,
+                tintColor: COLORS.darkGreen
+            }}
+          />
+        </TouchableOpacity>
       </View>
     )
   }
@@ -163,6 +179,48 @@ const Recipe = ({ navigation, route }) => {
     );
   }
 
+    function renderRecipeInfo(){
+      return(
+        <View
+          style={{
+            flexDirection: 'row',
+            height: 130,
+            width: SIZES.width,
+            paddingHorizontal: 30,
+            paddingVertical: 20,
+            alignItems: 'center'
+          }}
+        >
+          {/* Recipe */}
+          <View
+            style={{
+              flex: 1.5,
+              justifyContent: 'center',
+            }}
+          >
+            <Text
+              style={{
+                ...FONTS.h2
+              }}
+            >
+              {selectedRecipe?.name}
+            </Text>
+            <Text
+              style={{
+                marginTop: 5,
+                color: COLORS.lightGray2,
+                ...FONTS.body4
+              }}
+            >
+               {selectedRecipe?.duration} | {selectedRecipe?.serving} Serving
+            </Text>
+          </View>
+
+          {/* Viewers */}
+        </View>
+      )
+    }
+
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.white }}>
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true} />
@@ -188,6 +246,7 @@ const Recipe = ({ navigation, route }) => {
             {renderRecipeCardHeader()}
 
             {/* Info */}
+            {renderRecipeInfo()}
 
             {/* Ingredient Title */}
           </>
