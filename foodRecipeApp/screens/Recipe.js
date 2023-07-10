@@ -152,7 +152,6 @@ const Recipe = ({ navigation, route }) => {
             </View>
           </View>
         )}
-        ListFooterComponent={<View style={{ marginBottom: 45 }} />}
       />
       {/* Header Bar */}
       {renderHeaderBar()}
