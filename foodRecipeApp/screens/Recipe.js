@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, FlatList, StatusBar } from 'react-native';
 import { COLORS, FONTS, SIZES, icons } from '../constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Viewers} from '../components';
 
 const HEADER_HEIGHT = 350;
 
@@ -217,6 +218,18 @@ const Recipe = ({ navigation, route }) => {
           </View>
 
           {/* Viewers */}
+
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+            }}
+          >
+            <Viewers
+               viewersList={selectedRecipe?.viewers}
+            />
+            
+          </View>
         </View>
       )
     }
