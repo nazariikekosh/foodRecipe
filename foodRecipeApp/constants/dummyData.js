@@ -68,7 +68,7 @@ const trendingRecipes = [
             },
             {
                 id: 4,
-                profilePic: images.UserProfile3
+                profilePic: images.UserProfile4
             }
         ]
     },
