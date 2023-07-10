@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, FlatList, StatusBar } from 'react-native';
-import { COLORS, FONTS, SIZES } from '../constants';
+import { COLORS, FONTS, SIZES, icons } from '../constants';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const HEADER_HEIGHT = 350;
 
@@ -34,11 +35,32 @@ const RecipeCreatorCardDetail = ({selectedRecipe}) => {
               flex: 1,
               marginHorizontal: 20
             }}>
-              <Text style={{color: COLORS.lightGray2, ...FONTS.body4}}>Recipe by:</Text>
+              <Text style={{color: COLORS.gray, ...FONTS.body4}}>Recipe by:</Text>
               <Text style={{color: COLORS.white, ...FONTS.h3}}>{selectedRecipe?.author?.name}</Text>
             </View>
 
       {/* Button */}
+            <TouchableOpacity
+              style={{
+                width: 30,
+                height: 30,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 20,
+                borderRadius: 5,
+                borderWidth: 1,
+                borderColor: COLORS.lightGreen1
+              }}
+            >
+              <Image
+                source={icons.rightArrow}
+                style={{
+                  width: 15,
+                  height: 15,
+                  tintColor: COLORS.lightGreen1
+                }}
+              />
+            </TouchableOpacity>
     </View>
   )
 }
@@ -49,7 +71,7 @@ const RecipeCreatorCardInfo = ({selectedRecipe}) => {
     style={{
       flex: 1,
       borderRadius: SIZES.radius,
-      backgroundColor: COLORS.transparentGray
+      backgroundColor: COLORS.transparentBlack7
     }}
     >
       <RecipeCreatorCardDetail
