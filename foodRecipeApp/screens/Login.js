@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground, StatusBar } from 'react-native'
+import { View, Text, TouchableOpacity, ImageBackground, StatusBar, SafeAreaView } from 'react-native'
 import React from 'react'
 import { images, COLORS, SIZES, FONTS } from '../constants'
 import LinearGradient from 'react-native-linear-gradient'
@@ -16,7 +16,6 @@ const Login = ({ navigation }) => {
           style={{
             flex: 1,
             justifyContent: 'flex-end'
-            
           }}
           resizeMode='cover'
         >
@@ -103,16 +102,13 @@ const Login = ({ navigation }) => {
   }
 
   return (
-    <View style={{
-      flex: 1,
-      backgroundColor: COLORS.black,
-    }}>
-      <StatusBar backgroundColor={COLORS.black} barStyle="light-content" />
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
+      <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       {/* Header */}
       {renderHeader()}
       {/* Detail */}
       {renderDetail()}
-    </View>
+    </SafeAreaView>
   )
 }
 
