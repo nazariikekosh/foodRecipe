@@ -8,11 +8,11 @@ import {
   StatusBar,
 } from 'react-native';
 import React from 'react';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {COLORS, FONTS, SIZES, icons, images, dummyData} from '../constants';
-import {CategoryCard, TrendingCard} from '../components';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLORS, FONTS, SIZES, icons, images, dummyData } from '../constants';
+import { CategoryCard, TrendingCard } from '../components';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   function renderHeader() {
     return (
       <View
@@ -118,7 +118,6 @@ const Home = ({navigation}) => {
         </View>
 
         {/* Text */}
-
         <View
           style={{
             flex: 1,
@@ -129,14 +128,13 @@ const Home = ({navigation}) => {
               width: '70%',
               ...FONTS.body4,
             }}>
-            {' '}
             You have 12 recipes that you haven't tried yet
           </Text>
           <TouchableOpacity
             style={{
               marginTop: 10,
             }}
-            omPress={() => comsole.log('See Recipe')}>
+            onPress={() => console.log('See Recipe')}>
             <Text
               style={{
                 color: COLORS.darkGreen,
@@ -170,24 +168,24 @@ const Home = ({navigation}) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={({item, index}) => {
+          renderItem={({ item, index }) => {
             return (
               <TrendingCard
                 containerStyle={{
-                  marginLeft: index === 0 ? SIZES.padding : 0
+                  marginLeft: index === 0 ? SIZES.padding : 0,
                 }}
-                  recipeItem={item}
-                  onPress={() => navigation.navigate('Recipe', {recipe: item})}
-                  />
-            )
+                recipeItem={item}
+                onPress={() => navigation.navigate('Recipe', { recipe: item })}
+              />
+            );
           }}
         />
       </View>
     );
   }
 
-function renderCategoryHeader() {
-    return(
+  function renderCategoryHeader() {
+    return (
       <View style={{
         flexDirection: 'row',
         alignItems: 'center',
@@ -205,16 +203,16 @@ function renderCategoryHeader() {
         </Text>
 
         {/* View all */}
-          <TouchableOpacity>
-            <Text
-              style={{
-                color: COLORS.gray,
-                ...FONTS.body4
-              }}
-            >
-              View All
-            </Text>
-          </TouchableOpacity>
+        <TouchableOpacity>
+          <Text
+            style={{
+              color: COLORS.gray,
+              ...FONTS.body4
+            }}
+          >
+            View All
+          </Text>
+        </TouchableOpacity>
 
       </View>
     )
@@ -225,8 +223,13 @@ function renderCategoryHeader() {
       style={{
         flex: 1,
         backgroundColor: COLORS.white,
+        paddingTop: StatusBar.currentHeight, // Додано відступ від верхнього краю
       }}>
-      <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
       <FlatList
         data={dummyData.categories}
         keyExtractor={item => `${item.id}`}
@@ -246,14 +249,14 @@ function renderCategoryHeader() {
             {renderCategoryHeader()}
           </View>
         }
-        renderItem={({item}) => {
+        renderItem={({ item }) => {
           return (
             <CategoryCard
               containerStyle={{
                 marginHorizontal: SIZES.padding,
               }}
               categoryItem={item}
-              onPress={() => navigation.navigate('Recipe', {recipe: item})}
+              onPress={() => navigation.navigate('Recipe', { recipe: item })}
             />
           );
         }}
