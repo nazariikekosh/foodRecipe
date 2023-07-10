@@ -1,8 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, FlatList, StatusBar } from 'react-native';
-import { COLORS, FONTS } from '../constants';
+import { COLORS, FONTS, SIZES } from '../constants';
 
 const HEADER_HEIGHT = 350;
+
+const RecipeCreatorCardDetail = ({selectedRecipe}) => {
+  return(
+    <View
+      style={{
+         flex: 1,
+         flexDirection: 'row',
+         alignItems: 'center',
+
+      }}
+    >
+      {/* Profile Photo */}
+        <View style={{
+          width: 40,
+          height: 40,
+          marginLeft: 20
+        }}>
+          <Image
+            source={selectedRecipe?.author?.profilePic}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 20
+            }}
+          />
+        </View>
+      {/* Labels */}
+            <View style={{
+              flex: 1,
+              marginHorizontal: 20
+            }}>
+              <Text style={{color: COLORS.lightGray2, ...FONTS.body4}}>Recipe by:</Text>
+              <Text style={{color: COLORS.white, ...FONTS.h3}}>{selectedRecipe?.author?.name}</Text>
+            </View>
+
+      {/* Button */}
+    </View>
+  )
+}
+
+const RecipeCreatorCardInfo = ({selectedRecipe}) => {
+  return(
+    <View
+    style={{
+      flex: 1,
+      borderRadius: SIZES.radius,
+      backgroundColor: COLORS.transparentGray
+    }}
+    >
+      <RecipeCreatorCardDetail
+        selectedRecipe={selectedRecipe}
+      />
+
+
+    </View>
+  )
+}
 
 const Recipe = ({ navigation, route }) => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -23,6 +80,18 @@ const Recipe = ({ navigation, route }) => {
         />
 
         {/* Recipe Creator Card */}
+        <View style={{
+          position: 'absolute',
+          bottom: 10,
+          left: 30,
+          right: 30,
+          height: 80,
+        }}>
+          <RecipeCreatorCardInfo
+            selectedRecipe={selectedRecipe}
+          />
+        </View>
+
       </View>
     );
   }

@@ -12,7 +12,7 @@ const trendingRecipes = [
         category: "Pasta",
         author: {
             profilePic: images.UserProfile5,
-            name: "Maria",
+            name: "Pashka",
         },
         ingredients: [
             {
@@ -56,7 +56,7 @@ const trendingRecipes = [
         viewers: [
             {
                 id: 1,
-                profilePic: images.UserProfile1
+                profilePic: images.profile
             },
             {
                 id: 2,
@@ -82,7 +82,7 @@ const trendingRecipes = [
         category: "Local",
         author: {
             profilePic: images.UserProfile8,
-            name: "Mandy",
+            name: "Ostap",
         },
         ingredients: [
             {
@@ -128,7 +128,7 @@ const trendingRecipes = [
             },
             {
                 id: 3,
-                profilePic: images.UserProfile1
+                profilePic: images.profile
             },
             {
                 id: 4,
@@ -150,7 +150,7 @@ const trendingRecipes = [
         category: "Local",
         author: {
             profilePic: images.UserProfile9,
-            name: "Jessie",
+            name: "Rostyslav",
         },
         ingredients: [
             {
@@ -195,18 +195,18 @@ const trendingRecipes = [
         viewers: [
             {
                 id: 1,
-                name: "User 1",
-                profilePic: images.UserProfile1
-            },
-            {
-                id: 2,
                 name: "User 2",
                 profilePic: images.UserProfile2
             },
             {
-                id: 3,
+                id: 2,
                 name: "User 3",
                 profilePic: images.UserProfile3
+            },
+            {
+                id: 3,
+                name: "User 4",
+                profilePic: images.UserProfile4
             }
         ]
     },
@@ -220,7 +220,7 @@ const trendingRecipes = [
         category: "Local",
         author: {
             profilePic: images.UserProfile7,
-            name: "Ali Baba",
+            name: "Iryna",
         },
         ingredients: [
             {
