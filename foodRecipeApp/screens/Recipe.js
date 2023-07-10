@@ -21,6 +21,37 @@ const Recipe = ({navigation, route}) => {
     setSelectedRecipe(recipe);
   }, []);
 
+
+  function renderRecipeCardHeader() {
+    return(
+      <View
+        style={{
+          alignItems: 'center',
+        }}
+      >
+        {/* Background Image */}
+        <Animated.Image
+          source={selectedRecipe?.image}
+          resizeMode={'contain'}
+          style={{
+            height: HEADER_HEIGHT,
+            width: "100%",
+            transform: [
+              {
+                translateY: scrollY.interpolate({
+                  inputRange:[- HEADER_HEIGHT, 0, HEADER_HEIGHT],
+                  outputRange: [- HEADER_HEIGHT / 2, 0, HEADER_HEIGHT * 0.75]
+                })
+              }
+            ]
+          }}
+        />
+
+        {/* Recipe Creator Card */}
+      </View>
+    )
+  }
+
   return (
     <View
       style={{
@@ -31,7 +62,15 @@ const Recipe = ({navigation, route}) => {
         data={selectedRecipe?.ingredients}
         keyExtractor={item => `${item.id}`}
         showsVerticalScrollIndicator={false}
-        listHeaderComponent={<View></View>}
+        listHeaderComponent={
+          <View>
+            {/* Header */}
+            {renderRecipeCardHeader()}
+
+            {/*  Info  */}
+
+            {/* Ingredient Title */}
+          </View>}
         scrollEventThrottle={16}
         onScroll={Animated.event(
           [{nativeEvent: {contentOffset: {y: scrollY}}}],
@@ -43,10 +82,9 @@ const Recipe = ({navigation, route}) => {
               flexDirection: 'row',
               paddingHorizontal: 30,
               marginVertical: 5,
-            }}
-          >
+            }}>
             {/* Icon */}
-            
+
             <View
               style={{
                 alignItems: 'center',
@@ -54,9 +92,8 @@ const Recipe = ({navigation, route}) => {
                 height: 50,
                 width: 50,
                 borderRadius: 5,
-                backgroundColor: COLORS.lightGray
-              }}
-            >
+                backgroundColor: COLORS.lightGray,
+              }}>
               <Image
                 source={item.icon}
                 style={{
@@ -68,22 +105,33 @@ const Recipe = ({navigation, route}) => {
 
             {/* Description */}
 
-              <View style={{
+            <View
+              style={{
                 flex: 1,
                 paddingHorizontal: 20,
                 justifyContent: 'center',
-
               }}>
-                <Text
-                  style={{
-                    ...FONTS.body3
-                  }}
-                >
-                  {item.description}
-                </Text>
-              </View>
+              <Text
+                style={{
+                  ...FONTS.body3,
+                }}>
+                {item.description}
+              </Text>
+            </View>
 
             {/* Quanity */}
+            <View
+              style={{
+                alignItems: 'flex-end',
+                justifyContent: 'center',
+              }}>
+              <Text
+                style={{
+                  ...FONTS.body3,
+                }}>
+                S{item.quantity}
+              </Text>
+            </View>
           </View>
         )}
       />
