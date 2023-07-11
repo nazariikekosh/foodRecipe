@@ -99,7 +99,7 @@ const Settings = ({navigation}) => {
         paddingVertical: 8,
         paddingLeft: 12,
       }}>
-      <MaterialIcons name={icon} size={30} color="black" />
+      <MaterialIcons name={icon} size={30} color="gray" />
       <Text
         style={{
           marginLeft: 36,
@@ -131,7 +131,7 @@ const Settings = ({navigation}) => {
           <MaterialIcons
             name="keyboard-arrow-left"
             size={30}
-            color={COLORS.black}
+            color={COLORS.gray}
           />
         </TouchableOpacity>
         <Text
@@ -160,7 +160,7 @@ const Settings = ({navigation}) => {
             }}>
             Account
           </Text>
-          <View style={{borderRadius: 6, backgroundColor: COLORS.gray}}>
+          <View style={{borderRadius: 6, backgroundColor: '#E7F9EF'}}>
             {accountItems.map((item, index) => (
               <React.Fragment key={index}>
                 {renderSettingsItem(item)}
@@ -182,7 +182,7 @@ const Settings = ({navigation}) => {
             }}>
             Support & About
           </Text>
-          <View style={{borderRadius: 12, backgroundColor: COLORS.gray }}>
+          <View style={{borderRadius: 12, backgroundColor: '#E7F9EF' }}>
             {supportItems.map((item, index) => (
               <React.Fragment key={index}>
                 {renderSettingsItem(item)}
@@ -204,7 +204,7 @@ const Settings = ({navigation}) => {
             }}>
             Cache & Cellular
           </Text>
-          <View style={{borderRadius: 12, backgroundColor: COLORS.gray}}>
+          <View style={{borderRadius: 12, backgroundColor: '#E7F9EF'}}>
             {cacheAndCellularItems.map((item, index) => (
               <React.Fragment key={index}>
                 {renderSettingsItem(item)}
@@ -226,7 +226,7 @@ const Settings = ({navigation}) => {
             }}>
             Actions
           </Text>
-          <View style={{borderRadius: 12, backgroundColor: COLORS.gray }}>
+          <View style={{borderRadius: 12, backgroundColor: '#E7F9EF' }}>
             {actionsItems.map((item, index) => (
               <React.Fragment key={index}>
                 {renderSettingsItem(item)}
