@@ -120,7 +120,12 @@ const Search = () => {
     );
   }
 
-  const photos = [
+  const gallery1Photos = [
+    require('../assets/images/searchImage/1.jpg'),
+    require('../assets/images/searchImage/2.jpg'),
+    require('../assets/images/searchImage/3.jpg'),
+    require('../assets/images/searchImage/4.jpg'),
+    require('../assets/images/searchImage/5.jpg'),
     require('../assets/images/recipes/laksa.png'),
     require('../assets/images/recipes/nasi-lemak.webp'),
     require('../assets/images/recipes/recipe.png'),
@@ -131,9 +136,40 @@ const Search = () => {
     require('../assets/images/recipes/recipe.png'),
     require('../assets/images/recipes/satay.png'),
     require('../assets/images/recipes/spagetti.png'),
+  ];
+
+  const gallery2Photos = [
+    require('../assets/images/searchImage/5.jpg'),
+    require('../assets/images/recipes/nasi-lemak.webp'),
+    require('../assets/images/searchImage/6.jpg'),
+    require('../assets/images/recipes/satay.png'),
+    require('../assets/images/recipes/spagetti.png'),
     require('../assets/images/recipes/laksa.png'),
     require('../assets/images/recipes/nasi-lemak.webp'),
     require('../assets/images/recipes/recipe.png'),
+    require('../assets/images/recipes/satay.png'),
+    require('../assets/images/recipes/spagetti.png'),
+    require('../assets/images/recipes/laksa.png'),
+    require('../assets/images/recipes/nasi-lemak.webp'),
+    require('../assets/images/recipes/recipe.png'),
+    require('../assets/images/recipes/satay.png'),
+    require('../assets/images/recipes/spagetti.png'),
+  ];
+
+  const gallery3Photos = [
+    require('../assets/images/recipes/laksa.png'),
+    require('../assets/images/searchImage/7.jpg'),
+    require('../assets/images/recipes/recipe.png'),
+    require('../assets/images/searchImage/8.jpg'),
+    require('../assets/images/recipes/spagetti.png'),
+    require('../assets/images/recipes/laksa.png'),
+    require('../assets/images/searchImage/6.jpg'),
+    require('../assets/images/recipes/recipe.png'),
+    require('../assets/images/recipes/satay.png'),
+    require('../assets/images/searchImage/3.jpg'),
+    require('../assets/images/recipes/laksa.png'),
+    require('../assets/images/recipes/nasi-lemak.webp'),
+    require('../assets/images/searchImage/9.jpg'),
     require('../assets/images/recipes/satay.png'),
     require('../assets/images/recipes/spagetti.png'),
   ];
@@ -156,9 +192,31 @@ const Search = () => {
           <View>
             {/* Search Bar */}
             {renderSearchBar()}
-            {/* Photo Gallery */}
+            {/* Photo Gallery 1 */}
             <FlatList
-              data={photos}
+              data={gallery1Photos}
+              keyExtractor={(item, index) => index.toString()}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                marginTop: SIZES.padding,
+              }}
+              renderItem={renderGalleryItem}
+            />
+            {/* Photo Gallery 2 */}
+            <FlatList
+              data={gallery2Photos}
+              keyExtractor={(item, index) => index.toString()}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                marginTop: SIZES.padding,
+              }}
+              renderItem={renderGalleryItem}
+            />
+            {/* Photo Gallery 3 */}
+            <FlatList
+              data={gallery3Photos}
               keyExtractor={(item, index) => index.toString()}
               horizontal
               showsHorizontalScrollIndicator={false}
