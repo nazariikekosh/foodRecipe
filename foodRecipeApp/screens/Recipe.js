@@ -7,12 +7,12 @@ const HEADER_HEIGHT = 350;
 
 const RecipeCreatorCardDetail = ({ selectedRecipe }) => {
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', margin: 10  }}>
       {/* Profile Photo */}
       <View style={{ width: 40, height: 40, marginLeft: 20 }}>
         <Image
           source={selectedRecipe?.author?.profilePic}
-          style={{ width: 40, height: 40, borderRadius: 20 }}
+          style={{ width: 40, height: 40, borderRadius: 20}}
         />
       </View>
       {/* Labels */}

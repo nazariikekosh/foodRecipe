@@ -81,8 +81,8 @@ const trendingRecipes = [
         isBookmark: true,
         category: "Local",
         author: {
-            profilePic: images.UserProfile8,
-            name: "Ostap",
+            profilePic: images.UserProfile10,
+            name: "Nazarii",
         },
         ingredients: [
             {
