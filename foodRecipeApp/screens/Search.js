@@ -126,6 +126,16 @@ const Search = () => {
     require('../assets/images/recipes/recipe.png'),
     require('../assets/images/recipes/satay.png'),
     require('../assets/images/recipes/spagetti.png'),
+    require('../assets/images/recipes/laksa.png'),
+    require('../assets/images/recipes/nasi-lemak.webp'),
+    require('../assets/images/recipes/recipe.png'),
+    require('../assets/images/recipes/satay.png'),
+    require('../assets/images/recipes/spagetti.png'),
+    require('../assets/images/recipes/laksa.png'),
+    require('../assets/images/recipes/nasi-lemak.webp'),
+    require('../assets/images/recipes/recipe.png'),
+    require('../assets/images/recipes/satay.png'),
+    require('../assets/images/recipes/spagetti.png'),
   ];
 
   return (
