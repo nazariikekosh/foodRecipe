@@ -231,7 +231,8 @@ const Search = () => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
@@ -243,7 +244,8 @@ const Search = () => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
@@ -255,7 +257,8 @@ const Search = () => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
@@ -267,31 +270,34 @@ const Search = () => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
             {/* Photo Gallery 5 */}
             <FlatList
-              data={gallery5Photos}
+              data={gallery1Photos}
               keyExtractor={(item, index) => index.toString()}
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
              {/* Photo Gallery 6 */}
              <FlatList
-              data={gallery3Photos}
+              data={gallery2Photos}
               keyExtractor={(item, index) => index.toString()}
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
@@ -303,7 +309,8 @@ const Search = () => {
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
                 marginTop: SIZES.padding,
-                marginLeft: SIZES.padding
+                marginLeft: SIZES.padding,
+                paddingRight: SIZES.padding
               }}
               renderItem={renderGalleryItem}
             />
