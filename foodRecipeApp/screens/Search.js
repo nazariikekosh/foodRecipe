@@ -105,7 +105,7 @@ const Search = () => {
               source={selectedPhoto}
               style={{
                 width: 300,
-                height: 300,
+                height: 400,
                 borderRadius: 10,
               }}
             />
