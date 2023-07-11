@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   useEffect(() => {
-    LogBox.ignoreLogs(['ReactImageView: Image source "null"']);
+    LogBox.ignoreLogs(['ReactImageView: Image source "null"' , 'Found screens with the same name nested inside one another. Check:' ]);
   }, []);
   
   return (
